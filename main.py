@@ -99,7 +99,7 @@ def pre_process_leads_data(df, fitted_scaler, ):
 model = bz2.BZ2File('./Models/model2.pbz2', 'rb')
 model = joblib.load(model)
 
-with open('./Models/scaler2.pkl', 'rb') as f:
+with open('./Models/scaler2.joblib', 'rb') as f:
     scaler = joblib.load(f)
 
 
