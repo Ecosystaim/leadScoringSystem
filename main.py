@@ -1,6 +1,6 @@
 # Dependencies
 import traceback
-
+import joblib
 from fastapi import FastAPI
 from pydantic import BaseModel
 import pandas as pd
@@ -96,11 +96,11 @@ def pre_process_leads_data(df, fitted_scaler, ):
 # with open('./Models/model.pkl', 'rb') as f:
 #    model = pickle.load(f)
 
-model = bz2.BZ2File('./Models/model.pbz2', 'rb')
-model = pickle.load(model)
+model = bz2.BZ2File('./Models/model2.pbz2', 'rb')
+model = joblib.load(model)
 
-with open('./Models/scaler.pkl', 'rb') as f:
-    scaler = pickle.load(f)
+with open('./Models/scaler2.pkl', 'rb') as f:
+    scaler = joblib.load(f)
 
 
 @app.post('/')

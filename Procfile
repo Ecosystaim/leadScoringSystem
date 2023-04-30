@@ -1,1 +1,1 @@
-web: gunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker --preload --max-requests 1000
+web: gunicorn main:app -w 2 -k uvicorn.workers.UvicornWorker --preload
