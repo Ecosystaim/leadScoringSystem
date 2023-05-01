@@ -129,7 +129,7 @@ async def calcscore(item: apiInput):
 
         yhat = model.predict(df_clean)
 
-        return {"Lead Score": int(yhat)}
+        return {"Lead_Score": int(yhat)}
     except Exception as e:
         errmsg = traceback.format_exception()
         return {"error": errmsg}
