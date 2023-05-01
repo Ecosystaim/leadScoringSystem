@@ -5,9 +5,22 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import pandas as pd
 import bz2file as bz2
-import pickle
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "http://localhost:8080",
+    "https://stormsales.netlify.app/"
+]
+
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+)
 
 
 # Class to define API input / Prospect Data
