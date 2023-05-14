@@ -110,11 +110,8 @@ def pre_process_leads_data(df, fitted_scaler, ):
     return _df
 
 
-# with open('./Models/model.pkl', 'rb') as f:
-#    model = pickle.load(f)
-
-model = bz2.BZ2File('./Models/model2.pbz2', 'rb')
-model = joblib.load(model)
+with open('./Models/model_final.joblib', 'rb') as f:
+    model = joblib.load(f)
 
 with open('./Models/scaler2.joblib', 'rb') as f:
     scaler = joblib.load(f)

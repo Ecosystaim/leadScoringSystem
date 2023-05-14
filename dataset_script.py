@@ -4,13 +4,13 @@ import random
 # Feature values for Good Leads
 lead_sources_g = ['REFERRAL', 'PAID', 'INBOUND']
 countries_g = ['USA', 'Canada', 'UK', 'Australia', 'Japan', ]
-ages_g = list(range(35, 60))
+ages_g = list(range(45, 60))
 genders_g = ['MALE', 'FEMALE', 'OTHER']
 education_levels_g = ['HIGH SCHOOL', 'COLLEGE', 'BACHELOR']
 occupations_g = ['SELF-EMPLOYED', 'BUSINESSMAN', 'RETIRED']
 industries_g = ['SERVICES', 'RETAIL', 'MANUFACTURING']
 incomes_g = list(range(100000, 200000, 1000))
-initial_responses_g = ['POSITIVE', 'NEUTRAL']
+initial_responses_g = ['POSITIVE']
 do_not_contacts_g = 'No'
 total_calls_attended_g = list(range(3, 8))
 total_meetings_attended_g = list(range(2, 4))
@@ -24,9 +24,9 @@ lead_scores_g = list(range(75, 100))
 # Feature values for MID Leads
 lead_sources_m = ['PAID', 'OTHER']
 countries_m = ['USA', 'Canada', 'UK', 'Australia', 'Japan', ]
-ages_m = list(range(35, 45))
+ages_m = list(range(40, 45))
 genders_m = ['MALE', 'FEMALE', 'OTHER']
-education_levels_m = ['COLLEGE', 'MASTER', 'PhD']
+education_levels_m = ['HIGH SCHOOL', 'COLLEGE', 'BACHELOR']
 occupations_m = ['EMPLOYEE', 'UNEMPLOYED']
 industries_m = ['SERVICES', 'RETAIL', 'MANUFACTURING']
 incomes_m = list(range(80000, 100000, 1000))
@@ -37,7 +37,7 @@ total_meetings_attended_m = list(range(2, 3))
 general_knowledge_m = ['NOVICE', 'INTERMEDIATE', 'ADVANCED']
 business_knowledge_m = ['NOVICE', 'INTERMEDIATE', 'ADVANCED']
 company_sizes_m = ['MEDIUM']
-company_estimated_revenues_m = list(range(1000000, 10000000, 1000))
+company_estimated_revenues_m = list(range(800000, 10000000, 1000))
 lead_qualities_m = ['HOT', 'WARM']
 lead_scores_m = list(range(50, 75))
 
@@ -47,23 +47,23 @@ countries_b = ['India', 'Pakistan', 'Brazil', 'China', 'Germany', 'France']
 ages_b = list(range(18, 40))
 genders_b = ['MALE', 'FEMALE', 'OTHER']
 education_levels_b = ['BACHELOR', 'MASTER', 'PhD']
-occupations_b = ['EMPLOYEE', 'UNEMPLOYED', 'BUSINESSMAN', 'OTHER']
+occupations_b = ['EMPLOYEE', 'UNEMPLOYED', 'OTHER']
 industries_b = ['FINANCE', 'TECHNOLOGY', 'HEALTHCARE']
-incomes_b = list(range(20000, 100000, 1000))
-initial_responses_b = ['NEGATIVE', 'NEUTRAL']
+incomes_b = list(range(20000, 80000, 1000))
+initial_responses_b = ['NEGATIVE']
 do_not_contacts_b = ['Yes', 'No']
 total_calls_attended_b = list(range(1, 3))
 total_meetings_attended_b = list(range(0, 1))
-general_knowledge_b = ['NOVICE', 'BASIC', 'EXPERT']
-business_knowledge_b = ['NOVICE', 'BASIC', 'EXPERT']
-company_sizes_b = ['MEDIUM', 'SMALL']
+general_knowledge_b = ['BASIC', 'EXPERT']
+business_knowledge_b = ['BASIC', 'EXPERT']
+company_sizes_b = ['SMALL']
 company_estimated_revenues_b = list(range(100000, 1000000, 1000))
 lead_qualities_b = 'COLD'
 lead_scores_b = list(range(10, 45))
 
 # Generate 5,000 records with random values for good scores
 leads = []
-for i in range(5000):
+for i in range(3500):
     lead = [
         random.choice(lead_sources_g),
         random.choice(countries_g),
@@ -145,7 +145,7 @@ for i in range(10000):
         leads[i][9] = 'Yes'
 
 # Write the leads to a CSV file
-with open('Datasets/synthetic_leads.csv', 'w', newline='') as csvfile:
+with open('Datasets/dataset.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow([
         'Lead_Source',
